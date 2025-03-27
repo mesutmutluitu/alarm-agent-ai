@@ -1,3 +1,387 @@
 [2025-03-27T11:45:54.022937] [0b0a7d92a557] [Disk kullanımı çok yüksek] [START]
 Analiz başladı.
 ------------------------------------------------------------
+[2025-03-27T11:55:53.147442] [kendi_container_adin] [Disk kullanımı çok yüksek] [START]
+Analiz başladı.
+------------------------------------------------------------
+[2025-03-27T11:56:51.879987] [kendi_container_adin] [Disk kullanımı çok yüksek] [START]
+Analiz başladı.
+------------------------------------------------------------
+[2025-03-27T11:57:05.964510] [kendi_container_adin] [Disk kullanımı çok yüksek] [START]
+Analiz başladı.
+------------------------------------------------------------
+[2025-03-27T11:59:32.414563] [kendi_container_adin] [Disk kullanımı çok yüksek] [START]
+Analiz başladı.
+------------------------------------------------------------
+[2025-03-27T14:25:44.925455] [my-ubuntu] [Disk kullanımı çok yüksek] [START]
+Analiz başladı.
+------------------------------------------------------------
+[2025-03-27T14:25:44.935770] [my-ubuntu] [Disk kullanımı çok yüksek] [ERROR]
+Beklenmeyen format:
+404 page not found
+------------------------------------------------------------
+[2025-03-27T14:26:48.039639] [my-ubuntu] [Disk kullanımı çok yüksek] [START]
+Analiz başladı.
+------------------------------------------------------------
+[2025-03-27T14:26:48.049099] [my-ubuntu] [Disk kullanımı çok yüksek] [ERROR]
+Beklenmeyen format:
+404 page not found
+------------------------------------------------------------
+[2025-03-27T14:30:10.952631] [my-ubuntu] [Disk kullanımı çok yüksek] [START]
+Analiz başladı.
+------------------------------------------------------------
+[2025-03-27T14:32:44.261529] [my-ubuntu] [Disk kullanımı çok yüksek] [START]
+Analiz başladı.
+------------------------------------------------------------
+[2025-03-27T14:33:26.345674] [my-ubuntu] [Disk kullanımı çok yüksek] [COMMAND_PROPOSED]
+df -h
+Açıklama: 
+------------------------------------------------------------
+[2025-03-27T14:33:26.489857] [my-ubuntu] [Disk kullanımı çok yüksek] [COMMAND_MISSING]
+df -h
+------------------------------------------------------------
+[2025-03-27T14:34:15.696986] [my-ubuntu] [Disk kullanımı çok yüksek] [COMMAND_PROPOSED]
+`find / -type f -print0 | xargs -0 du -sh | sort -h`
+Açıklama: 
+------------------------------------------------------------
+[2025-03-27T14:34:15.722129] [my-ubuntu] [Disk kullanımı çok yüksek] [COMMAND_MISSING]
+`find / -type f -print0 | xargs -0 du -sh | sort -h`
+------------------------------------------------------------
+[2025-03-27T14:35:16.794234] [0b0a7d92a557] [Disk kullanımı çok yüksek] [START]
+Analiz başladı.
+------------------------------------------------------------
+[2025-03-27T14:36:14.142524] [0b0a7d92a557] [Disk kullanımı çok yüksek] [COMMAND_PROPOSED]
+df -h
+Açıklama: 
+------------------------------------------------------------
+[2025-03-27T14:36:14.616355] [0b0a7d92a557] [Disk kullanımı çok yüksek] [COMMAND_EXECUTED]
+df -h
+Çıktı:
+Filesystem      Size  Used Avail Use% Mounted on
+overlay        1007G  4.2G  952G   1% /
+tmpfs            64M     0   64M   0% /dev
+shm              64M     0   64M   0% /dev/shm
+/dev/vda1      1007G  4.2G  952G   1% /etc/hosts
+tmpfs           3.9G     0  3.9G   0% /proc/scsi
+tmpfs           3.9G     0  3.9G   0% /sys/firmware
+------------------------------------------------------------
+[2025-03-27T14:37:06.614531] [0b0a7d92a557] [Disk kullanımı çok yüksek] [COMMAND_PROPOSED]
+`free -m`
+Açıklama: 
+------------------------------------------------------------
+[2025-03-27T14:37:06.632041] [0b0a7d92a557] [Disk kullanımı çok yüksek] [COMMAND_MISSING]
+`free -m`
+------------------------------------------------------------
+[2025-03-27T14:37:50.656273] [0b0a7d92a557] [Disk kullanımı çok yüksek] [ERROR]
+Beklenmeyen format:
+Komut: `free -m`
+   AÇIKLAMA: Bu komut sistemde bulunan RAM'in boyutu, kullanıldığı, boş bulunması ve kullanım oranı hakkında bilgi verir.
+
+   ANALİZ:
+   1. Alarm oluştu çünkü disk kullanımı çok yüksek (>90%).
+   2. Bu durum, sistemde bulunan dosyalar ve ayrıca çalışan işlemlerin boyutu arkasındadır.
+   3. Bir önceki sebebi de disk kullanımına orantılı olan adların bulunması nedir: temp dosyalar, cache verileri ve kopyalamalardan sonra bırakılmamış dosyalar.
+   4. Sistemsel/operasyonel sebepler arasında, yüksek disk kullanımının oluşmasına neden olabilecekler: belleğin yetersiz olduğu (RAM), sistem kapatma oturumlarının açıldığı veya ayrıntılı bir analiz süreçinde yapılan işlemler.
+   5. En derin neden disk kullanımı çok yüksek olamaz: RAM'de yeterli alan bulunması ve belleğin yeterli olması veya yeterince optimize edilmiş olan işlemlerin sürülmesi.
+------------------------------------------------------------
+[2025-03-27T14:38:39.998816] [0b0a7d92a557] [Disk kullanımı çok yüksek] [START]
+Analiz başladı.
+------------------------------------------------------------
+[2025-03-27T14:39:32.503514] [0b0a7d92a557] [Disk kullanımı çok yüksek] [COMMAND_PROPOSED]
+df -h
+Açıklama: 
+------------------------------------------------------------
+[2025-03-27T14:39:32.933596] [0b0a7d92a557] [Disk kullanımı çok yüksek] [COMMAND_EXECUTED]
+df -h
+Çıktı:
+Filesystem      Size  Used Avail Use% Mounted on
+overlay        1007G  4.2G  952G   1% /
+tmpfs            64M     0   64M   0% /dev
+shm              64M     0   64M   0% /dev/shm
+/dev/vda1      1007G  4.2G  952G   1% /etc/hosts
+tmpfs           3.9G     0  3.9G   0% /proc/scsi
+tmpfs           3.9G     0  3.9G   0% /sys/firmware
+------------------------------------------------------------
+[2025-03-27T14:40:27.227853] [0b0a7d92a557] [Disk kullanımı çok yüksek] [COMMAND_PROPOSED]
+`free -h`
+Açıklama: 
+------------------------------------------------------------
+[2025-03-27T14:40:27.244450] [0b0a7d92a557] [Disk kullanımı çok yüksek] [COMMAND_MISSING]
+`free -h`
+------------------------------------------------------------
+[2025-03-27T14:47:58.483326] [0b0a7d92a557] [Disk kullanımı çok yüksek] [START]
+Analiz başladı.
+------------------------------------------------------------
+[2025-03-27T14:48:51.903322] [0b0a7d92a557] [Disk kullanımı çok yüksek] [COMMAND_PROPOSED]
+`df -h`
+Açıklama: 
+------------------------------------------------------------
+[2025-03-27T14:48:51.923594] [0b0a7d92a557] [Disk kullanımı çok yüksek] [COMMAND_MISSING]
+`df -h`
+------------------------------------------------------------
+[2025-03-27T14:49:44.708046] [0b0a7d92a557] [Disk kullanımı çok yüksek] [COMMAND_PROPOSED]
+`which df`
+Açıklama: 
+------------------------------------------------------------
+[2025-03-27T14:49:44.730749] [0b0a7d92a557] [Disk kullanımı çok yüksek] [COMMAND_MISSING]
+`which df`
+------------------------------------------------------------
+[2025-03-27T14:52:12.053492] [0b0a7d92a557] [Disk kullanımı çok yüksek] [START]
+Analiz başladı.
+------------------------------------------------------------
+[2025-03-27T14:54:44.326363] [0b0a7d92a557] [Disk kullanımı çok yüksek] [START]
+Analiz başladı.
+------------------------------------------------------------
+[2025-03-27T14:56:40.714209] [0b0a7d92a557] [Disk kullanımı çok yüksek] [START]
+Analiz başladı.
+------------------------------------------------------------
+[2025-03-27T14:57:54.064672] [0b0a7d92a557] [Disk kullanımı çok yüksek] [START]
+Analiz başladı.
+------------------------------------------------------------
+[2025-03-27T14:58:39.105559] [0b0a7d92a557] [Disk kullanımı çok yüksek] [ERROR]
+Beklenmeyen format:
+<think>
+Alright, I'm trying to figure out what the user is asking for here. They have a problem where they provided some code or system information, but it seems incomplete because of an empty comment at the end with "@#". Also, their request for analyzing an alarm and giving five reasons based on certain natures is clear.
+
+I think they might be working on something like a Linux system logs file, as the first part of their message includes "Sen bir Linux sistem analiz aracısın." which translates to "A user is analyzing a Linux system." They provided some output from the system logs and want me to process that information along with any additional analysis they might need.
+
+The initial code they sent seems like it's missing, so I can't process it directly. I wonder if there are placeholders or specific details about how the log shows up, like which line has "ALARM: Disk kullanımı Çok yüksek" (alarm: usage of disk is high) and then some output lines below that.
+
+Since I don't have the complete logs, I need to think about what kind of analysis someone would perform on such a message. They probably want to know why the disk usage is so high and understand the implications of that.
+
+I should consider possible reasons related to disk space, which might be due to unused files or data corruption. Also, I should note that increased disk usage can lead to performance issues if not managed properly. It's important to mention how this could affect other system resources like memory or CPU usage as well.
+
+Additionally, they want the user to explain why these reasons are correct and provide actionable steps based on each point. This way, they can understand not just why something is happening but also how they can fix it or prevent similar issues in the future.
+
+I should make sure my analysis covers all five points they mentioned: 1) what causes disk usage, 2) its impact on other resources, 3) possible reasons leading to this increase, 4) underlying system and operational factors, and 5) deeper causes that could be addressed. Each point needs a clear explanation and reasoning.
+
+Overall, I need to structure my response by addressing each of these points, providing concise and logical explanations based on common issues with disk usage in computing systems.
+</think>
+
+Her story:  
+A user has provided some system logs data but there's an incomplete log showing "ALARM: Disk kullanımı Çok yüksek" (Alarm: Usage of disk is high) followed by no output. The user would like to know the reasoning behind this alarm and analyze it.
+
+---
+
+### **Analyze the Alarm**
+
+#### 1. **What causes this alarm?**  
+The alarm indicates that there's a high usage of disk space, possibly due to unused files or data corruption in memory.
+
+#### 2. **Impact on other resources?**  
+This high disk usage can lead to performance issues if not managed properly, potentially reducing CPU and memory usage over time.
+
+#### 3. **Possible reasons leading to this increase?**  
+- Unused files on the filesystem.
+- Data corruption or unnecessary copying of data.
+- Overread of existing files or directories.
+
+#### 4. **Underlying system/operative factors?**  
+- System RAM running low due to unused processes.
+- Filesystem not being optimized or cleaned up properly.
+- Resource leaks in the OS or application using disk space.
+
+#### 5. **Deeper causes that could be addressed?**  
+- Optimizing file systems and disk usage by cleaning up unused files.
+- Ensuring system resources (RAM, CPU) are sufficient for processing tasks.
+- Cleaning up excess OS files on the filesystem.
+- Ensuring data integrity by performing regular backups.
+
+---
+
+### ** Tekniğe Amaçlayan Anализations Gönderileri:**
+
+1. **Alarm neden oluştu?**  
+   - Uygun olan disk resourceleri hikayesiyle ilgili veya kayna eden bir dilde data olduğunu gösteriyor.
+
+2. **Bu durumun arkasındaki neden nedir?**  
+   - İşlemecilik en büyük diskanlarda kullanılmaz olduğu ve bu nedeni zaten birhalefesine dair etkilediği gözlemlenmiş olabilir.
+
+3. ** Bir önceki sebebin kökeni nedir?**  
+   - Disk kullanışının azalması, hizmetler de azaldığını gösteriyor ve bunun etkilerini incelemek için gereksiz bir sebebi var.
+
+4. **Bu durumun oluşmasına sebep olan sistemsel/operasyonel neden ne olabilir?**  
+   - Hesaplama roklerinde diskanlarda verilen arka planlar, system-level ve operative level'de etkileşim gösteriyor.
+
+5. **En derin nedenedir?**  
+   - Disk kullanışının azalması ve hizmetlerle nasıl ilişkilendirildiğini biliyoruz.
+
+---
+
+Bu anlatılar birbirini anlamak için önemli kavramalar: disk, hizmet, resim ve bu gibi resourcelere odun etmek için doğru makineler kullanmam gerekiyor.
+------------------------------------------------------------
+[2025-03-27T15:01:21.296397] [0b0a7d92a557] [Disk kullanımı çok yüksek] [START]
+Analiz başladı.
+------------------------------------------------------------
+[2025-03-27T15:01:40.802679] [0b0a7d92a557] [Disk kullanımı çok yüksek] [ERROR]
+Beklenmeyen format:
+<think>
+Alright, let me try to figure out how to respond to this query. So, the user provided a situation where they're setting up a Linux system and have some debug information. They want me to analyze it step by step.
+
+First, I need to understand the structure of the problem. It seems like there's an alarm message about disk usage being very high. Then, after that, there are several analysis sections asking why each part occurs. The user has provided a detailed breakdown with examples from other issues.
+
+I should start by identifying what each part means. The first alert is about high disk usage. That's a common issue related to system performance and data storage. Next, the error messages might be due to certain resource constraints or filesystem limitations on Windows systems. Then, there's another warning about permissions, which often relates to user access or file handling issues.
+
+The analysis sections are specific questions that I need to address based on these warnings. Each answer should explain the cause in a concise manner using simple language. The user wants each section to be clear and directly tied to the symptoms observed, so I'll make sure to align my explanations with those observations.
+
+I also notice that the user provided an example response for another issue. That can serve as a template; I just need to adapt it to this new problem. Each answer should follow a similar structure, explaining why something happened based on prior knowledge or analysis.
+
+Lastly, I'll make sure that each section is numbered and follows the same format as before—using "NEC: <cause>" for each question. This will help keep things organized and easy to read for the user.
+</think>
+
+### Dikkatler:
+1. **Alarm neden oluştu?**  
+   - Disk kullanme çok yüksek görünümü olması, bir systemsel performans ve verilerin kaydedilmesine relatecediği durum olabilir.
+
+2. **Bu durumun arkasındaki neden nedir?**  
+   - Bu durumda, bir systemi veya operasyonellikten az indenmiş veya genel performansta zorlanmış olabilir.
+
+3. **Bir önceki sebebin kökeni nedir?**  
+   - Her bir sebe binde genel olarak bir systemsellikte limitleri nedenedir, bu yüzden genel olarak bir systemsellikten zorlanma veya genellikle verileri kaydetme problemi varabilir.
+
+4. **Bu durumun oluşmasına sebep olan sistemsel/operasyonel neden ne olabilir?**  
+   - Sistemsel nedenler: systemi zorlama, operasyondan zorlanma veya genellikle verileri kaydetme gibi.
+   - Operasyonel nedenler: bir systemsellikten zorlanma veya genellikle verileri kaydetme gibi.
+
+5. **En derin neden nedir?**  
+   - Diskin ve operasyonal performansını ve verileri kaydetmenin gerekebilmesini doğrudan neden olabilir.
+------------------------------------------------------------
+[2025-03-27T15:03:59.578843] [0b0a7d92a557] [Disk kullanımı çok yüksek] [START]
+Analiz başladı.
+------------------------------------------------------------
+[2025-03-27T15:04:21.116517] [0b0a7d92a557] [Disk kullanımı çok yüksek] [ERROR]
+Beklenmeyen format:
+<think>
+İlk olarak, analiz şemasına geçmek için önce alarm mesajının ne olduğunu anlamam gerekiyor. Bu mesajda "Disk kullanımı Çok yüksek" olarak ifade edilmiş. Bualarm, disk uygulamalarının kadar highitesiyle başlamıştır.
+
+Ayrıca, bu durum, system performanslarını azaltma ve devamında hikayesi etkilediği görüylendi. Disk mavi seviyesinin azalması, operatörlerle bağlanması ve sadece programlama süreçleri için dahaNull bir şekilde devam edebilir.
+
+Bu durumun nedeni, disk uygulamalarının azaldığını ve system performanslarınıazaltmakta gerekiyor. Bu neden, hikayenin kritik bir parçasıdır çünkü disk uygulamalarının en önemli bir kısmında yer alıyor.
+
+Bu durumun nedeni, bir sebebi olarak system'in işlevsizliği artırmadığını ve hikayenin düzenli olduğu için. Sadece programlama ve dekaylamaları için disk uygulamalarına gidebilmek isteniyor.
+
+Daha sonra, bu durumun nedeni, sistemse okuyucuların saniye içinde hizmetlerini azaltmakta gereken bir sebebi olabilir. Bu, systemi hikayesine ve operasyonel olarak daha zorlar olabilir.
+
+Son olarak, disk uygulamalarının azaldığını, hikayenin okumcu olduğu için sistemde dekaylamaları ve programlama süreçleri için dahaNull bir şekilde devam etmeliyimiz. Bu durumun nedeni, her sebebiyle ve her performans determinatına gidiyor.
+
+Bu anlatımdan, belirleyip, tüm nedenlerini açıklamalıyım.
+</think>
+
+ANALİZ:
+
+1. **Alarm neden oluştu?**
+   - Disk uygulamalarının kadar highitesiyle başlamıştır.
+
+2. **Bu durumun arkasındaki neden nedir?**
+   - Sistem performanslarını azaltmakta gerekiyor.
+   - Sadece programlama süreçleri için hikayeyi ve operasyonel olarak daha zor olabilir.
+
+3. **Bir önceki sebebin kökeni nedir?**
+   - System'in işlevsizliği artırmadığını ve hikayenin kritik bir parçası olabilir.
+
+4. **Bu durumun oluşmasına sebep olan sistemsel/operasyonel neden ne olabilir?**
+   - Hikayeyi okuyucuların saniye içinde hizmetlerini azaltmakta gereken sebebiyle ilgili.
+   - Sadece programlama süreçleri için disk uygulamalarına gidebilir.
+
+5. **En derin neden nedir?**
+   - Disk uygulamalarının en önemli bir parçasi olabilir, hikayeyi ve operasyonel olarak daha zor olabilir.
+------------------------------------------------------------
+[2025-03-27T15:05:47.282522] [0b0a7d92a557] [Disk kullanımı çok yüksek] [START]
+Analiz başladı.
+------------------------------------------------------------
+[2025-03-27T15:06:14.514212] [0b0a7d92a557] [Disk kullanımı çok yüksek] [ERROR]
+Beklenmeyen format:
+<think>
+Alright, I'm trying to figure out the best way to respond to this user's query about analyzing an alarm in a Linux system. The user provided some existing comments and wants me to generate a detailed analysis based on those.
+
+First, looking at the "ALARM" message: "Disk kullanımı çok yüksek." That seems pretty clear—high disk usage. So I need to explain why that's happening and what could be causing it.
+
+Then, moving on to "ANALİZ," which is a bit vague. The user wants me to perform a 5 Why analysis. They've provided five questions about the root causes, but they're using some unclear phrases like "topladığın bilgilerle" which might mean "to speak." I should make sure those are translated correctly.
+
+I need to structure my response into clear sections for each question in alphabetical order. Each answer should be concise and directly address the cause without unnecessary details.
+
+Let me start by identifying the main cause of the alarm, which is disk usage. Once that's established, I can explore what could lead to increased disk space: memory issues, sector corruption, OS errors, or even just lack of free space on disks.
+
+For each of these possibilities, I'll provide a brief explanation but keep it short and straightforward. Then, I'll move on to the other questions about why this might be happening, how it's affecting the system, what could cause it, and finally, what makes it so.
+
+I should make sure my language is simple and easy to understand since the user wants concise explanations. Also, ensuring that each point flows logically from one to the next will help in making the analysis clear and organized.
+</think>
+
+**TEKNIK ve SHARP ANLIS: ALAMAZ SAGILANIM**
+
+1. **Why Disk Uyumusesinin Oynuluğu?**  
+   - Disk Uyumusesının Arttığını Anlatmak için, genellikle OS’ın Yerel İşlemcileri (OZ) veya OS’ın Bitwise Operations gibi operated adımları ile işe koyulup, daosların sağlanması veya Yerel İşlemciyi Etkileyici Hesaplamaları ile bağlı olabilir. Ayrıca, OS’si Görsel İşlemciye Eklendiği Farklı Değerlere Aynınlanabilir.
+
+2. **Bu Sallama Arka plana Dayanacak Garanti?**  
+   - Yerel İşlemcyi Hesaplamalarını Artırdığını veya Yerel İşlemcyi Etkleyici Hesaplamalarının Artırmak için, genellikle Yerel İşlemciyi Görsel İşlemcilerle Ekleme, OS’yi Bitwise Operations yaparak, ve Gölge ve M market placelerine Ait Değerlere Aynınlanmalı.
+
+3. **Sallama ArkaPlanı Ne Hesaplamış?**  
+   - Sallama ArkaPlanının Sonucu, genellikle Yerel İşlemciyi Görsel İşlemcilerle Ekleme, OS’yi Bitwise Operations yaparak ve Gölge ve M market placelerine Ait Değerlere Aynınlanmalı.
+
+4. **Bu Sallama ArkaPlanı Dayanacak Garanti?**  
+   - Yerel İşlemciye Görsel İşlemcyi Ekleme, OS’yi Bitwise Operations yaparak ve Gölge ve M market placelerine Ait Değerlere Aynınlanmalı.
+
+5. **En Derin Garanti Ne Hesaplamış?**  
+   - Genellikle Yerel İşlemciye Görsel İşlemcyi Ekleme, OS’yi Bitwise Operations yaparak ve Gölge ve M market placelerine Ait Değerlere Aynınlanmalı. Ayrıca, genellikle Yerel İşlemciyi Etkileyici Hesaplamalarını Artırmak için, genellikle OS’yi Bitwise Operations yaparak, daosların sağlanması veya Yerel İşlemciyi Eklendiği Farklı Değerlere Aynınlanmalı.
+------------------------------------------------------------
+[2025-03-27T15:08:51.930848] [0b0a7d92a557] [Disk kullanımı çok yüksek] [START]
+Analiz başladı.
+------------------------------------------------------------
+[2025-03-27T15:09:09.763615] [0b0a7d92a557] [Disk kullanımı çok yüksek] [COMMAND_PROPOSED]
+
+Açıklama: 
+------------------------------------------------------------
+[2025-03-27T15:10:20.056092] [0b0a7d92a557] [Disk kullanımı çok yüksek] [START]
+Analiz başladı.
+------------------------------------------------------------
+[2025-03-27T15:10:50.391229] [0b0a7d92a557] [Disk kullanımı çok yüksek] [COMMAND_PROPOSED]
+
+Açıklama: 
+------------------------------------------------------------
+[2025-03-27T15:10:50.392527] [0b0a7d92a557] [Disk kullanımı çok yüksek] [COMMAND_MISSING]
+
+------------------------------------------------------------
+[2025-03-27T15:11:27.730556] [0b0a7d92a557] [Disk kullanımı çok yüksek] [COMMAND_PROPOSED]
+
+Açıklama: 
+------------------------------------------------------------
+[2025-03-27T15:11:27.731607] [0b0a7d92a557] [Disk kullanımı çok yüksek] [COMMAND_MISSING]
+
+------------------------------------------------------------
+[2025-03-27T15:12:50.934136] [0b0a7d92a557] [Disk kullanımı çok yüksek] [START]
+Analiz başladı.
+------------------------------------------------------------
+[2025-03-27T15:16:12.545625] [0b0a7d92a557] [Disk kullanımı çok yüksek] [START]
+Analiz başladı.
+------------------------------------------------------------
+[2025-03-27T15:16:59.289677] [0b0a7d92a557] [Disk kullanımı çok yüksek] [COMMAND_PROPOSED]
+df -h
+Açıklama: 
+------------------------------------------------------------
+[2025-03-27T15:16:59.754384] [0b0a7d92a557] [Disk kullanımı çok yüksek] [COMMAND_EXECUTED]
+df -h
+Çıktı:
+Filesystem      Size  Used Avail Use% Mounted on
+overlay        1007G  4.2G  952G   1% /
+tmpfs            64M     0   64M   0% /dev
+shm              64M     0   64M   0% /dev/shm
+/dev/vda1      1007G  4.2G  952G   1% /etc/hosts
+tmpfs           3.9G     0  3.9G   0% /proc/scsi
+tmpfs           3.9G     0  3.9G   0% /sys/firmware
+------------------------------------------------------------
+[2025-03-27T15:17:15.950764] [0b0a7d92a557] [Disk kullanımı çok yüksek] [COMMAND_PROPOSED]
+top
+Açıklama: 
+------------------------------------------------------------
+[2025-03-27T15:17:16.447560] [0b0a7d92a557] [Disk kullanımı çok yüksek] [COMMAND_EXECUTED]
+top
+Çıktı:
+[ERROR] Komut çalıştırılamadı:
+------------------------------------------------------------
+[2025-03-27T15:17:50.438679] [0b0a7d92a557] [Disk kullanımı çok yüksek] [COMMAND_PROPOSED]
+`iostat -x 5`
+Açıklama: 
+------------------------------------------------------------
+[2025-03-27T15:17:50.457350] [0b0a7d92a557] [Disk kullanımı çok yüksek] [COMMAND_MISSING]
+`iostat -x 5`
+------------------------------------------------------------

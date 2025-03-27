@@ -5,6 +5,7 @@ def execute_ssh_command(ip, username, password, command):
 
 def execute_local_docker_command(container_name, command):
     full_command = f"docker exec {container_name} bash -c \"{command}\""
+    print("komtttttt:",full_command)
     try:
         result = subprocess.check_output(full_command, shell=True, stderr=subprocess.STDOUT, text=True)
         return result

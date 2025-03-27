@@ -1,18 +1,21 @@
-from langchain.llms.base import LLM
+from langchain_core.language_models.llms import LLM
 import requests
 
 class OllamaLLM(LLM):
     model: str = "mistral"
-    endpoint_url: str = "http://localhost:11435"
+    endpoint_url: str = "http://localhost:11434/api/generate"
 
     def _call(self, prompt: str, stop=None):
         response = requests.post(
             self.endpoint_url,
             json={"model": self.model, "prompt": prompt, "stream": False},
-            timeout=30
+            timeout=60
         )
-        result = response.json()
-        return result.get("response", "")
+        try:
+            result = response.json()
+            return result.get("response", response.text)
+        except ValueError:
+            return response.text
 
     @property
     def _llm_type(self) -> str:
