@@ -10,6 +10,8 @@ llm = OllamaLLM(model="mistral", endpoint_url="http://localhost:2030")
 
 class AlarmRequest(BaseModel):
     ip: str
+    username: str
+    password: str
     alarm: str
 
 def prompt_next_command(history, attempt=1):
@@ -50,10 +52,10 @@ KÖK SEBEP: <tek cümlelik nihai neden>
 """
     return llm(prompt)
 
-def check_command_exists(ip, command):
+def check_command_exists(ip, username, password, command):
     base_cmd = command.split()[0]
     check_cmd = f"command -v {base_cmd} >/dev/null 2>&1 && echo 'OK' || echo 'NOT_FOUND'"
-    result = execute_ssh_command(ip, check_cmd)
+    result = execute_ssh_command(ip, username, password, check_cmd)
     return "OK" in result
 
 @app.post("/analyze")
@@ -89,7 +91,7 @@ async def analyze_alarm(payload: AlarmRequest):
                 log_event(ip, alarm, "COMMAND_PROPOSED", f"{command}\nAçıklama: {explanation}")
 
                 if check_command_exists(ip, command):
-                    output = execute_ssh_command(ip, command)
+                    output = execute_ssh_command(ip, username, password, command)
                     history += f"\n\n> {command}\n{output.strip()}"
                     log_event(ip, alarm, "COMMAND_EXECUTED", f"{command}\nÇıktı:\n{output.strip()}")
                     break
