@@ -1,3 +1,6 @@
 langchain
+fastapi
+uvicorn
 paramiko
 requests
+pydantic
