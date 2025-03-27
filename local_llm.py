@@ -3,7 +3,7 @@ import requests
 
 class OllamaLLM(LLM):
     model: str = "mistral"
-    endpoint_url: str = "http://localhost:2030"
+    endpoint_url: str = "http://localhost:11435"
 
     def _call(self, prompt: str, stop=None):
         response = requests.post(

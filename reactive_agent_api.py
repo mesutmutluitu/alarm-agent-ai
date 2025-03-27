@@ -1,17 +1,15 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from local_llm import OllamaLLM
-from ssh_tools import execute_ssh_command
+from ssh_tools import execute_local_docker_command
 from logger import log_event
 import time
 
 app = FastAPI()
-llm = OllamaLLM(model="mistral", endpoint_url="http://localhost:2030")
+llm = OllamaLLM(model="mistral", endpoint_url="http://localhost:11435")
 
 class AlarmRequest(BaseModel):
-    ip: str
-    username: str
-    password: str
+    container: str
     alarm: str
 
 def prompt_next_command(history, attempt=1):
@@ -52,19 +50,19 @@ KÖK SEBEP: <tek cümlelik nihai neden>
 """
     return llm(prompt)
 
-def check_command_exists(ip, username, password, command):
+def check_command_exists(container, command):
     base_cmd = command.split()[0]
     check_cmd = f"command -v {base_cmd} >/dev/null 2>&1 && echo 'OK' || echo 'NOT_FOUND'"
-    result = execute_ssh_command(ip, username, password, check_cmd)
+    result = execute_local_docker_command(container, check_cmd)
     return "OK" in result
 
 @app.post("/analyze")
 async def analyze_alarm(payload: AlarmRequest):
-    ip = payload.ip
+    container = payload.container
     alarm = payload.alarm
 
     history = f"ALARM: {alarm}"
-    log_event(ip, alarm, "START", "Analiz başladı.")
+    log_event(container, alarm, "START", "Analiz başladı.")
 
     while True:
         for attempt in range(1, 6):
@@ -72,10 +70,10 @@ async def analyze_alarm(payload: AlarmRequest):
 
             if response.startswith("ANALİZ:"):
                 analysis = response.replace("ANALİZ:", "").strip()
-                log_event(ip, alarm, "5WHY", analysis)
+                log_event(container, alarm, "5WHY", analysis)
 
                 conclusion = prompt_final_conclusion(analysis).strip()
-                log_event(ip, alarm, "ROOT_CAUSE", conclusion)
+                log_event(container, alarm, "ROOT_CAUSE", conclusion)
 
                 return {
                     "status": "ok",
@@ -88,21 +86,21 @@ async def analyze_alarm(payload: AlarmRequest):
                 command = next((line.replace("KOMUT:", "").strip() for line in lines if line.startswith("KOMUT:")), "")
                 explanation = next((line.replace("AÇIKLAMA:", "").strip() for line in lines if line.startswith("AÇIKLAMA:")), "")
 
-                log_event(ip, alarm, "COMMAND_PROPOSED", f"{command}\nAçıklama: {explanation}")
+                log_event(container, alarm, "COMMAND_PROPOSED", f"{command}\nAçıklama: {explanation}")
 
-                if check_command_exists(ip, command):
-                    output = execute_ssh_command(ip, username, password, command)
+                if check_command_exists(container, command):
+                    output = execute_local_docker_command(container, command)
                     history += f"\n\n> {command}\n{output.strip()}"
-                    log_event(ip, alarm, "COMMAND_EXECUTED", f"{command}\nÇıktı:\n{output.strip()}")
+                    log_event(container, alarm, "COMMAND_EXECUTED", f"{command}\nÇıktı:\n{output.strip()}")
                     break
                 else:
                     history += f"\n\n> {command}\n[Komut bulunamadı]"
-                    log_event(ip, alarm, "COMMAND_MISSING", command)
+                    log_event(container, alarm, "COMMAND_MISSING", command)
                     time.sleep(1)
             else:
-                log_event(ip, alarm, "ERROR", f"Beklenmeyen format:\n{response}")
+                log_event(container, alarm, "ERROR", f"Beklenmeyen format:\n{response}")
                 return {"status": "error", "message": "Beklenmeyen yanıt formatı", "raw_response": response}
 
         else:
-            log_event(ip, alarm, "FAILURE", "5 denemede de geçerli komut önerilemedi.")
+            log_event(container, alarm, "FAILURE", "5 denemede de geçerli komut önerilemedi.")
             return {"status": "fail", "message": "5 farklı komut önerisi başarısız oldu."}
